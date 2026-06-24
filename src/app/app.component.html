@@ -1,0 +1,340 @@
+<!-- Fondo fijo con birrete giratorio -->
+<app-background />
+
+<!-- Barra superior minimalista -->
+<header class="fixed inset-x-0 top-0 z-50 flex items-center justify-center px-4 py-3 sm:px-10 sm:py-4">
+  <span class="font-display text-[11px] uppercase tracking-widest2 text-silver sm:text-sm">
+    Generación <span class="text-rosa">2026</span>
+  </span>
+</header>
+
+<main class="relative z-10">
+  <!-- ============ HERO ============ -->
+  <section #hero id="inicio"
+    class="relative flex min-h-[100svh] flex-col items-center justify-center gap-6 px-5 py-24 text-center sm:gap-8">
+    <!-- datos de la escuela (reemplaza al escudo) + antetítulo -->
+    <div data-hero-top class="flex flex-col items-center">
+      <p data-hero class="font-display text-xs uppercase tracking-widest2 text-silver sm:text-sm">
+        Escuela Primaria Federal
+      </p>
+      <p data-hero class="text-metal mt-1 font-serif text-2xl leading-tight sm:text-3xl">
+        Jesús Reyes Heroles
+      </p>
+      <div data-hero
+        class="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-sans text-[9px] uppercase tracking-widest2 text-silver-muted sm:text-[10px]">
+        <span>SEIEM</span>
+        <span class="text-rosa/60">·</span>
+        <span>SEP</span>
+        <span class="text-rosa/60">·</span>
+        <span>CCT 15DPR3282R</span>
+      </div>
+
+      <p data-hero class="mt-6 font-sans text-[10px] uppercase tracking-widest3 text-silver-muted sm:mt-7 sm:text-sm">
+        Ceremonia de Clausura
+      </p>
+      <h1 data-hero class="text-rose-metal mt-2 font-display text-3xl font-bold leading-none sm:text-5xl md:text-6xl">
+        Generación<br>2020 — 2026
+      </h1>
+    </div>
+
+    <!-- imagen protagonista enmarcada con entrada animada -->
+    <figure data-hero-fig class="w-full max-w-3xl">
+      <div data-hero-img
+        class="relative overflow-hidden rounded-2xl border border-silver/15 shadow-2xl shadow-black/60 sm:rounded-3xl">
+        <img src="assets/graduacion.jpg" alt="Alumnos de la Generación 2020-2026 celebrando su graduación"
+          class="w-full" />
+        <div class="pointer-events-none absolute inset-0"
+          style="box-shadow: inset 0 0 80px 14px rgba(10,10,12,0.45); background: linear-gradient(180deg, transparent 72%, rgba(10,10,12,0.4));">
+        </div>
+      </div>
+    </figure>
+
+    <!-- ubicación + scroll -->
+    <div data-hero-bottom class="flex flex-col items-center">
+      <p data-hero
+        class="mx-auto max-w-xs font-serif text-base italic leading-snug text-silver-light/90 sm:max-w-xl sm:text-lg md:text-xl">
+        Bulevares del Lago · Nicolás Romero, Estado de México
+      </p>
+      <button data-hero (click)="goTo('frase-1')"
+        class="mt-6 flex flex-col items-center gap-1.5 text-silver-muted transition hover:text-rosa sm:mt-8 sm:gap-2">
+        <span class="font-sans text-[9px] uppercase tracking-widest2 sm:text-[10px]">Desliza</span>
+        <span class="flex h-8 w-5 justify-center rounded-full border border-current pt-1.5">
+          <span class="h-1.5 w-1.5 animate-float rounded-full bg-current"></span>
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ FRASE 1 ============ -->
+  <section id="frase-1" class="flex min-h-[42vh] items-center justify-center px-6 py-16 sm:py-24">
+    <figure class="mx-auto max-w-3xl text-center">
+      <span appReveal="scale" class="block font-display text-5xl text-rosa/40 sm:text-6xl">“</span>
+      <blockquote appReveal="up"
+        class="-mt-4 font-serif text-2xl font-light leading-snug text-silver-light sm:-mt-6 sm:text-4xl md:text-5xl">
+        Hay momentos en la vida que merecen ser compartidos con las personas que
+        <span class="text-rose-metal italic">guiaron nuestro camino.</span>
+      </blockquote>
+    </figure>
+  </section>
+
+  <!-- ============ INVITACIÓN ============ -->
+  <section id="invitacion" class="px-5 py-14 sm:py-20">
+    <div class="mx-auto max-w-2xl">
+      <div appReveal="up" class="glass rounded-3xl px-6 py-10 text-center sm:px-14 sm:py-14">
+        <p class="font-sans text-[10px] uppercase tracking-widest2 text-rosa sm:text-[11px]">
+          Tenemos el honor de invitarle
+        </p>
+        <div class="hairline mx-auto my-5 w-20 sm:my-7 sm:w-24"></div>
+        <p class="font-serif text-lg font-light leading-relaxed text-silver-light sm:text-2xl md:text-3xl">
+          La <span class="text-metal">dirección escolar</span> y el
+          <span class="text-metal">cuerpo docente</span> de la Escuela Primaria
+          “Jesús Reyes Heroles” tienen el honor de invitarle a la
+          <span class="text-rose-metal italic">Ceremonia de Clausura</span> de la
+          Generación 2020 — 2026.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DETALLES ============ -->
+  <section id="detalles" class="px-5 py-14 sm:py-20">
+    <h2 appReveal="up"
+      class="mb-8 text-center font-sans text-[10px] uppercase tracking-widest3 text-silver-muted sm:mb-12 sm:text-[11px]">
+      Detalles del evento
+    </h2>
+
+    <div class="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
+      <!-- Fecha -->
+      <div appReveal="up" [revealDelay]="0" class="glass rounded-2xl px-6 py-8 text-center">
+        <svg class="mx-auto mb-4 h-7 w-7 text-rosa sm:h-8 sm:w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.3">
+          <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
+          <path d="M3 9h18M8 2.5v4M16 2.5v4" stroke-linecap="round" />
+        </svg>
+        <p class="font-sans text-[10px] uppercase tracking-widest2 text-silver-muted">Fecha</p>
+        <p class="mt-2 font-display text-lg text-silver-light sm:text-xl">Viernes</p>
+        <p class="text-rose-metal font-display text-3xl font-semibold sm:text-4xl">10 Julio</p>
+        <p class="mt-1 font-serif text-base text-silver-muted sm:text-lg">2026</p>
+      </div>
+
+      <!-- Hora -->
+      <div appReveal="up" [revealDelay]="0.1" class="glass rounded-2xl px-6 py-8 text-center">
+        <svg class="mx-auto mb-4 h-7 w-7 text-rosa sm:h-8 sm:w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.3">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <p class="font-sans text-[10px] uppercase tracking-widest2 text-silver-muted">Hora</p>
+        <p class="text-rose-metal mt-2 font-display text-3xl font-semibold sm:text-4xl">8:30</p>
+        <p class="font-display text-lg text-silver-light sm:text-xl">a.m.</p>
+        <p class="mt-1 font-serif text-base text-silver-muted sm:text-lg">Puntual</p>
+      </div>
+
+      <!-- Lugar -->
+      <div appReveal="up" [revealDelay]="0.2" class="glass rounded-2xl px-6 py-8 text-center">
+        <svg class="mx-auto mb-4 h-7 w-7 text-rosa sm:h-8 sm:w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.3">
+          <path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" stroke-linejoin="round" />
+          <circle cx="12" cy="10" r="2.5" />
+        </svg>
+        <p class="font-sans text-[10px] uppercase tracking-widest2 text-silver-muted">Lugar</p>
+        <p class="text-rose-metal mt-2 font-display text-xl font-semibold leading-tight sm:text-2xl">
+          Bulevares del Lago
+        </p>
+        <p class="mt-2 font-serif text-sm text-silver-muted sm:text-base">Nicolás Romero, Edo. de México</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COUNTDOWN ============ -->
+  <section id="cuenta" class="px-5 py-14 sm:py-20">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 appReveal="up" class="mb-8 font-display text-2xl text-silver-light sm:mb-12 sm:text-4xl">
+        Falta poco para
+        <span class="text-rose-metal">celebrar juntos</span>
+      </h2>
+      <div appReveal="scale">
+        <app-countdown [target]="event.targetIso" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FRASE 2 ============ -->
+  <section id="frase-2" class="flex min-h-[36vh] items-center justify-center px-6 py-14 sm:py-20">
+    <figure class="mx-auto max-w-3xl text-center">
+      <blockquote appReveal="up"
+        class="font-serif text-2xl font-light italic leading-snug text-silver-light sm:text-4xl md:text-5xl">
+        El éxito es la suma de
+        <span class="text-rose-metal">pequeños esfuerzos</span> repetidos día tras
+        día.
+      </blockquote>
+      <figcaption appReveal="up" [revealDelay]="0.15"
+        class="mt-6 font-sans text-[10px] uppercase tracking-widest2 text-silver-muted sm:mt-8 sm:text-[11px]">
+        — Robert Collier
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ PROGRAMA ============ -->
+  <section id="programa" class="px-5 py-14 sm:py-20">
+    <div class="mx-auto max-w-2xl">
+      <h2 appReveal="up" class="text-center font-display text-2xl text-silver-light sm:text-4xl">
+        Programa del <span class="text-rose-metal">evento</span>
+      </h2>
+      <p appReveal="up" [revealDelay]="0.08"
+        class="mt-2 text-center font-serif text-base italic text-silver-muted sm:mt-3 sm:text-lg">
+        El orden de nuestra ceremonia
+      </p>
+
+      <div appReveal="up" [revealDelay]="0.12" class="glass mt-9 rounded-3xl px-6 py-9 sm:mt-12 sm:px-12 sm:py-11">
+        <!-- Programa Cívico -->
+        <p class="flex items-center gap-3 font-sans text-[11px] uppercase tracking-widest2 text-rosa">
+          <span class="h-px w-5 bg-rosa/50"></span>
+          Programa Cívico
+        </p>
+        <ol class="mt-5 space-y-4">
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">01</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">Cambio de escolta</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">02</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">Honores a la bandera</span>
+          </li>
+        </ol>
+
+        <div class="hairline my-7 sm:my-8"></div>
+
+        <!-- Programa Social -->
+        <p class="flex items-center gap-3 font-sans text-[11px] uppercase tracking-widest2 text-rosa">
+          <span class="h-px w-5 bg-rosa/50"></span>
+          Programa Social
+        </p>
+        <ol class="mt-5 space-y-4">
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">03</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">Recibimiento de los graduados</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">04</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">Presentación del presídium</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">05</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">
+              Ofrecimiento del programa
+              <span class="text-silver-muted">— Mtro. Lino Lara Hernández</span>
+            </span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">06</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">
+              Presentación de cuadro <span class="text-silver-muted">— Estado de Yucatán</span>
+            </span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">07</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">
+              Palabras de despedida <span class="text-silver-muted">— alumno de 5.º grado</span>
+            </span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">08</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">Último pase de lista</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">09</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">
+              Presentación de cuadro <span class="text-silver-muted">— Nuevo León</span>
+            </span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">10</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">
+              Entrada y vals <span class="text-silver-muted">— alumnos de 6.º A y B</span>
+            </span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">11</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">Entrega de reconocimientos de escolta</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">12</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">Reconocimiento Spelling Bee</span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">13</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">
+              Última presentación de 6.º A y B
+              <span class="text-silver-muted">— melodía «Pídeme la luna» en flauta dulce</span>
+            </span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">14</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">
+              Demostración de banda de guerra
+              <span class="text-silver-muted">— Secundaria General Leona Vicario</span>
+            </span>
+          </li>
+          <li class="flex gap-4">
+            <span class="mt-1 w-6 shrink-0 font-display text-sm tabular-nums text-rosa/70">15</span>
+            <span class="font-serif text-lg leading-snug text-silver-light">
+              Clausura <span class="text-silver-muted">— Mtro. Lino Lara Hernández</span>
+            </span>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Maestras de ceremonia -->
+      <div appReveal="up" class="mt-8 text-center sm:mt-10">
+        <p class="font-sans text-[10px] uppercase tracking-widest2 text-silver-muted">
+          Maestras de ceremonia
+        </p>
+        <p class="mt-2 font-serif text-lg text-silver-light sm:text-xl">
+          Ivette Carbajal Teja <span class="text-rosa/60">·</span> Rosa Flores Galván
+        </p>
+      </div>
+
+      <!-- ilustración de la generación -->
+      <figure appReveal="scale" class="mt-12 sm:mt-16">
+        <div
+          class="relative overflow-hidden rounded-2xl border border-silver/15 shadow-2xl shadow-black/60 sm:rounded-3xl">
+          <img src="assets/grad2.jpeg" alt="Ilustración de la Generación 2020-2026" class="w-full" loading="lazy" />
+          <div class="pointer-events-none absolute inset-0"
+            style="box-shadow: inset 0 0 80px 14px rgba(10,10,12,0.45); background: linear-gradient(180deg, transparent 70%, rgba(10,10,12,0.45));">
+          </div>
+        </div>
+        <figcaption class="mt-3 text-center font-serif text-sm italic text-silver-muted sm:mt-4 sm:text-lg">
+          Nuestra generación <span class="text-rosa/60">·</span> 2020 — 2026
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="px-6 pb-12 pt-12 text-center sm:pt-16">
+    <div appReveal="scale" class="hairline mx-auto mb-6 w-32 sm:mb-8 sm:w-40"></div>
+    <p class="font-display text-xs uppercase tracking-widest2 text-silver sm:text-sm">
+      Escuela Primaria Federal
+    </p>
+    <p class="mt-1 font-serif text-xl text-rose-metal sm:text-2xl">Jesús Reyes Heroles</p>
+    <p class="mt-3 font-sans text-[10px] uppercase tracking-widest2 text-silver-muted sm:text-[11px]">
+      SEIEM · SEP · CCT 15DPR3282R
+    </p>
+    <p class="mt-2 font-serif text-sm text-silver-muted sm:text-base">
+      Bulevares del Lago, Nicolás Romero, Estado de México
+    </p>
+    <p class="mt-6 font-sans text-[9px] uppercase tracking-widest2 text-silver-dark sm:mt-8 sm:text-[10px]">
+      Generación 2020 — 2026 · Con cariño
+    </p>
+
+    <!-- crédito GARIV -->
+    <div appReveal="up"
+      class="mx-auto mt-12 flex max-w-xs flex-col items-center gap-3 border-t border-silver/10 pt-9 sm:mt-14">
+      <span class="gariv-mark" role="img" aria-label="GARIV"></span>
+      <p class="font-sans text-[10px] uppercase tracking-widest2 text-silver-muted sm:text-[11px]">
+        2026 <span class="text-silver">GARIV</span>. Soluciones Web Inteligentes.
+      </p>
+    </div>
+  </footer>
+</main>

@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rosa: #d8a9b2;
+  --silver: #c7c9cc;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: auto; /* manejado por Lenis */
+}
+
+body {
+  margin: 0;
+  background-color: #0a0a0c;
+  color: #e9eaec;
+  font-family: "Cormorant Garamond", serif;
+  overflow-x: hidden;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Scrollbar minimalista */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#c28c97, #8c8e92);
+  border-radius: 99px;
+}
+
+::selection {
+  background: rgba(216, 169, 178, 0.3);
+  color: #fff;
+}
+
+@layer components {
+  /* Texto con acabado metálico plateado */
+  .text-metal {
+    background: linear-gradient(
+      100deg,
+      #8c8e92 0%,
+      #e9eaec 25%,
+      #ffffff 45%,
+      #c7c9cc 60%,
+      #8c8e92 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Texto con acabado rosa palo */
+  .text-rose-metal {
+    background: linear-gradient(100deg, #c28c97, #ead0d5, #d8a9b2, #c28c97);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(199, 201, 204, 0.6),
+      transparent
+    );
+  }
+
+  .glass {
+    background: rgba(18, 18, 21, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(199, 201, 204, 0.12);
+  }
+
+  /* Logo GARIV recoloreado al tema mediante máscara (independiente del fill del SVG) */
+  .gariv-mark {
+    display: inline-block;
+    width: 56px;
+    aspect-ratio: 2772 / 2100;
+    background: linear-gradient(120deg, #8c8e92 0%, #e9eaec 30%, #c7c9cc 55%, #8c8e92 100%);
+    -webkit-mask: url("/assets/logo-gariv.svg") no-repeat center / contain;
+    mask: url("/assets/logo-gariv.svg") no-repeat center / contain;
+    opacity: 0.92;
+  }
+}
+
+/* Estado inicial para reveal con GSAP (evita flash) */
+.reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+}
